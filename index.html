@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        width: 500px;
+        height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: inherit;
+        justify-content: space-between;
+        align-content: space-between;
+        border-radius: 10px;
+      }
+
+      .container:hover {
+        width: 550px;
+        height: 550px;
+      }
+
+      .container:hover .box {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+      }
+
+      .box {
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+        background-image: url(imgimg.jpg);
+        background-size: 500px 500px;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container"></div>
+
+    <script>
+      let ele;
+      let container = document.querySelector(".container");
+      for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+          ele = document.createElement("div");
+          ele.classList.add("box");
+          ele.style.backgroundPosition = `${-j * 100}px ${-i * 100}px`;
+          container.append(ele);
+        }
+      }
+    </script>
+  </body>
+</html>
